@@ -1,4 +1,4 @@
-import girls from './girls';
+import girls from './models';
 
 export default function () {
   girls();

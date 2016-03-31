@@ -7,7 +7,7 @@ export default function () {
 		collectionName: 'cronHistory'
 	})
 	SyncedCron.add({
-		name : 'update-girls',
+		name : 'update-models',
 		schedule : function(parser){
 			return parser.text('every 5 minutes');
 		},
@@ -15,14 +15,14 @@ export default function () {
 			try{
 				var result = request.getSync(chaturbateApiUrl);
 				if(result.response.statusCode === 200){
-					var girls = JSON.parse(result.body);
-					if(girls){
+					var models = JSON.parse(result.body);
+					if(models){
 						console.log('Begin import...');
-						Meteor.call('girls.offlines');
-						girls.forEach(function(girl){
-							Meteor.call('girls.import', girl);
+						Meteor.call('models.offlines');
+						models.forEach(function(model){
+							Meteor.call('models.import', model);
 						});
-						console.log('End import...', girls.length);
+						console.log('End import...', models.length);
 					}
 
 				}
