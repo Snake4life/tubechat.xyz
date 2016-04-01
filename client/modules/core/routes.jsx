@@ -5,6 +5,7 @@ import MainLayout from './components/main_layout.jsx';
 import ModelList from './containers/model_list.js';
 import Model from './containers/model.js';
 
+
 export default function (injectDeps, {FlowRouter}) {
     const MainLayoutCtx = injectDeps(MainLayout);
 
@@ -25,6 +26,15 @@ export default function (injectDeps, {FlowRouter}) {
             });
         }
     });
+
+	FlowRouter.route('/tags/:tag', {
+		name: 'models.list.byGender',
+		action({tag}) {
+			mount(MainLayoutCtx, {
+				content: () => (<ModelList tag={tag}/>)
+			});
+		}
+	});
 
     FlowRouter.route('/:gender/:username', {
         name: 'models.single',

@@ -1,3 +1,5 @@
-export default {
+import models from './models';
 
+export default {
+  models
 };

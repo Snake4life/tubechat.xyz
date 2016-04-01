@@ -1,6 +1,6 @@
 .modelList .modelItem{
-    min-height: 300px !important;
-    height: 300px;
+    max-height: 300px !important;
+    height: 290px;
 }
 
 .modelItem .info, .info2, .info3{
@@ -32,4 +32,22 @@
 
 .modelList a{
     text-decoration: none !important;
+}
+
+.girlShow .panel-body{
+    min-height: 550px !important;
+}
+
+.girlShow iframe, .embed-responsive {
+    min-height: 528px !important;
+}
+
+.girlShow .tags {
+    padding : 5px 0px 0px 5px;
+    margin: 0px;
+}
+
+.girlShow .tags li{
+    display: inline-block;
+    margin: 2px;
 }

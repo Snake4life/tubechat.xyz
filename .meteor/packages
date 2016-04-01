@@ -23,9 +23,9 @@ aldeed:collection2
 meteorhacks:async
 twbs:bootstrap
 fortawesome:fontawesome
-http
 check
 percolate:synced-cron
 froatsnook:request
 underscore
 underscorestring:underscore.string
+peerlibrary:async
