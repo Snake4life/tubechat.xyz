@@ -5,4 +5,3 @@ import AliExpress from './configs/aliexpress.js';
 publications();
 methods();
 Chaturbate();
-AliExpress();

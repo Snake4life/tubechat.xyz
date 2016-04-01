@@ -18,7 +18,7 @@ let IFRAME = React.createClass({
 			tagSection = <div className="panel-footer">
 				<ul className="tags">
 					{model.tags.map(tag => {
-						return <li> <a className="label label-success" href={`/tags/${tag}`} key={tag}>{tag}</a></li>
+						return <li key={tag}> <a className="label label-success" href={`/tags/${tag}`}>{tag}</a></li>
 					})}
 				</ul>
 			</div>
