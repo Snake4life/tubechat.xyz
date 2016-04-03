@@ -1,5 +1,8 @@
 import React from 'react';
 
+const JoinLink = 'http://chaturbate.com/affiliates/in/3Mc9/eqdcq/?track=default&redirect_to_room=-welcomepage-';
+
+
 class Menu extends React.Component {
 	render() {
 		let currentRoute = (route, gender) => {
@@ -13,7 +16,7 @@ class Menu extends React.Component {
 			}
 		};
 		return (
-			<nav className="navbar navbar-default navbar-static-top">
+			<nav className="navbar navbar-default navbar-fixed-top">
 				<div className="container">
 					<div className="navbar-header">
 						<button aria-controls="navbar" aria-expanded="false" data-target="#navbar"
@@ -31,8 +34,12 @@ class Menu extends React.Component {
 							<li className={currentRoute('models.list.byGender', 'f')}><a href="/f">Female</a></li>
 							<li className={currentRoute('models.list.byGender', 'm')}><a href="/m">Male</a></li>
 							<li className={currentRoute('models.list.byGender', 'c')}><a href="/c">Couple</a></li>
-							<li className={currentRoute('models.list.byGender', 't')}><a href="/t">Trans</a></li>
 						</ul>
+                        <ul className="nav navbar-nav navbar-right">
+                            <li>
+                                <a href={JoinLink} target="_blank"><span className="glyphicon glyphicon-user"></span> Free SignUp</a>
+                            </li>
+                        </ul>
 					</div>
 				</div>
 			</nav>

@@ -14,7 +14,8 @@ export const composer = ({context, gender, tag, resetLimit}, onData) => {
 	let limit = LocalState.get('LIMIT');
 	let loaded = LocalState.get('LOADED');
 	let filter = {
-		is_online: true
+		is_online: true,
+        current_show : {$ne : 'private'}
 	};
 
 	if (gender) {

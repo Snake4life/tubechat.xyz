@@ -47,7 +47,7 @@ let ModelItem = React.createClass({
                 <a href={`/${model.gender}/${model.username}`} className="thumbnail modelItem">
 	                <ImageLoader
 		                imgProps={{width : '360', height : '270', className : 'img-responsive center-block'}}
-		                src={placeholder}
+		                src={model.image_url_360x270}
 		                preloader={preloader}>
 		                Image load failed!
 	                </ImageLoader>
