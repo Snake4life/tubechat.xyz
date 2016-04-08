@@ -39,9 +39,16 @@ function preloader() {
 let ModelItem = React.createClass({
     render(){
         let model = this.props.model;
-        let room_subject = s.truncate(model.room_subject, 70);
+
         let mins = Math.round(model.seconds_online%60);
 	    let placeholder = '/placeholder.png';
+        let room_subjectSection = null;
+        if(model.room_subject){
+            let room_subject = s.truncate(model.room_subject, 70);
+            room_subjectSection = <p className="info2">
+                    <span className="subject">{room_subject}</span>
+                </p>
+        }
         return (
             <div className="col-lg-3 col-md-4 col-xs-6">
                 <a href={`/${model.gender}/${model.username}`} className="thumbnail modelItem">
@@ -57,9 +64,7 @@ let ModelItem = React.createClass({
                         <span className="age pull-right text-muted">{model.age}</span>
                     </p>
                     <hr/>
-                    <p className="info2">
-                        <span className="subject">{room_subject}</span>
-                    </p>
+                    {room_subjectSection}
                     <p className="info3">
                         <span>{mins} mins</span>
                         <span className="pull-right">{model.num_users}</span>

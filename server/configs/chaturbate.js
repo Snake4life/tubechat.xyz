@@ -1,13 +1,9 @@
 const chaturbateApiUrl = 'http://chaturbate.com/affiliates/api/onlinerooms/?format=json&wm=eqdcq';
-const _fiveMinutes = 5 * 60;
 
 export default function () {
-	SyncedCron.config({
-		log: true,
-		collectionName: 'cronHistory'
-	})
+
 	SyncedCron.add({
-		name : 'update-models',
+		name : 'update-models-chaturbate',
 		schedule : function(parser){
 			return parser.text('every 5 minutes');
 		},
@@ -19,7 +15,9 @@ export default function () {
 					if(models){
 						console.log('Begin import...');
 						Meteor.call('models.offlines');
+
 						models.forEach(function(model){
+                            model = _.extend(model,{source : 'CHATURBATE'});
 							Meteor.call('models.import', model);
 						});
 						console.log('End import...', models.length);

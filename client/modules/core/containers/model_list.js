@@ -26,6 +26,8 @@ export const composer = ({context, gender, tag, resetLimit}, onData) => {
 		filter = {...filter, tags: tag};
 	}
 
+	//filter = {...filter, source : 'CHATURBATE'};
+
 	let options = {
 		limit: limit,
 		sort: {
